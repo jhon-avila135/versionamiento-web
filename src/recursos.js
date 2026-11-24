@@ -11,6 +11,7 @@ import { renderTopCommands } from './components/TopCommands.js';
 import { renderCICalculator } from './components/CICalculator.js';
 import { renderCallout } from './components/Callout.js';
 import { renderCommandLevel } from './components/CommandLevel.js';
+import { renderQrDrive } from './components/QrDrive.js';
 
 export const COMANDOS_GIT = [
   { cmd: 'git clone <url>', categoria: 'Remotos', desc: 'Clona el repositorio remoto completo con su historial.' },
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <li><a href="#calculadora-ci">Calculadora de minutos CI/CD</a></li>
         <li><a href="#estandares">Estándares del repositorio</a></li>
         <li><a href="#errores">Problemas frecuentes y solución</a></li>
+        <li><a href="#resumen-qr">Resumen de comandos (QR)</a></li>
       </ol>
     </nav>
 
@@ -145,9 +147,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <dd>Guarda temporalmente tus cambios en la pila con <code>git stash</code> y recupéralos al volver mediante <code>git stash pop</code>.</dd>
       </dl>
     </section>
+
+    <section id="resumen-qr">
+      <h2><span class="num">5.</span>Resumen de comandos para llevar</h2>
+      <p>Guía en PDF con el flujo de trabajo, los comandos más usados y cómo deshacer cambios.</p>
+      <div id="slot-qr-drive"></div>
+    </section>
   `;
 
   renderTopCommands(document.getElementById('slot-top-comandos'), commandsTop10);
   renderCommandLevel(document.getElementById('slot-niveles-comandos'), commandsAll);
   renderCICalculator(document.getElementById('slot-calculadora-ci'));
+  renderQrDrive(document.getElementById('slot-qr-drive'));
 });

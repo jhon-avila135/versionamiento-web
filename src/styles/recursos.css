@@ -181,3 +181,31 @@
     columns: 1;
   }
 }
+
+.recursos .qr-drive {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.recursos .qr-imagen svg {
+  display: block;
+  width: 160px;
+  height: 160px;
+}
+
+.recursos .qr-drive figcaption {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .recursos .qr-drive {
+    flex-direction: column;
+    text-align: center;
+  }
+}
